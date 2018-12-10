@@ -16,3 +16,15 @@ terraform {
   # The configuration for this backend will be filled in by Terragrunt
   backend "s3" {}
 }
+
+
+resource "aws_security_group" "allow_all_security_group" {
+  name = "sg-alllow-all-instance"
+
+  ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
