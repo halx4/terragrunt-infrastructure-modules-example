@@ -19,7 +19,7 @@ terraform {
 
 
 resource "aws_security_group" "allow_all_security_group" {
-  name = "sg-alllow-all-instance"
+  name = "sg-allow-all-instance"
 
   ingress {
     from_port   = 8080
